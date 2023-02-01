@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OtraPruebaController;
+use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\pruebas;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
@@ -33,3 +34,7 @@ Route::get('/ruta_con_parametros/{parametro}', function ($parametro) {
 });
 
 Route::get('/users/{user_id}', [UsuariosController::class, 'findUserById']);
+
+
+Route::get('/productos', [ProductosController::class, 'todosLosProductos']);
+Route::get('/productos/new', [ProductosController::class, 'insertarProducto']);
