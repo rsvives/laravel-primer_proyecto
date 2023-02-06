@@ -37,4 +37,7 @@ Route::get('/users/{user_id}', [UsuariosController::class, 'findUserById']);
 
 
 Route::get('/productos', [ProductosController::class, 'todosLosProductos']);
-Route::get('/productos/new', [ProductosController::class, 'insertarProducto']);
+
+
+Route::get('/productos/new/', [ProductosController::class, 'formularioNuevoProducto']);
+Route::post('/productos/new/', [ProductosController::class, 'insertarProducto']);

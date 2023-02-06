@@ -12,21 +12,26 @@ class ProductosController extends Controller
         // echo "estoy mostrando todos los productos";
 
         $productos = Producto::all();
-        print("<pre>" . print_r($productos, true) . "</pre>");
+        return $productos;
     }
-    public function insertarProducto()
+    public function insertarProducto(Request $req)
     {
-        $nombre = "mi producto";
-        $descripcion = "lorem ipsum dolor";
-        $precio = 3.99;
-        $stock = 20;
+        // $precio = 3.99;
+        // $stock = 20;
 
-        $producto = new Producto;
-        $producto->nombre = $nombre;
-        $producto->descripcion = $descripcion;
-        $producto->precio = $precio;
-        $producto->stock = $stock;
+        // $producto = new Producto;
+        // $producto->nombre = $nombre;
+        // $producto->descripcion = $descripcion;
+        // $producto->precio = $precio;
+        // $producto->stock = $stock;
+        // $data = ["accion" => "insertando en la base de datos..."];
 
-        $producto->save();
+        dd($req->input('nombreProducto'));
+        // $producto->save();
+    }
+    public function formularioNuevoProducto()
+    {
+
+        return view('nuevoProducto');
     }
 }
